@@ -1,121 +1,528 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prepa'Day - Meal Prep Maroc</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-            color: #1a1a1a;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prepa'Day - Meal Prep Maroc</title>
 
-        .hero-gradient {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- ✅ Favicon (comme ton logo est à la racine du repo) -->
+  <link rel="icon" type="image/png" href="./logo.png" />
 
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
-        .whatsapp-float:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
-        }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+      color: #1a1a1a;
+    }
 
-        .whatsapp-tooltip {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            background: white;
-            padding: 12px 18px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            z-index: 1000;
-            border: 1px solid #f1f5f9;
-        }
+    .hero-gradient {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    }
 
-        .logo-container {
-            width: 60px;
-            height: 60px;
-            border-radius: 9999px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border: 2px solid #f1f5f9;
-        }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
 
-        .logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .whatsapp-float:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+    }
 
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+    .whatsapp-tooltip {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: white;
+      padding: 12px 18px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 1000;
+      border: 1px solid #f1f5f9;
+    }
 
-        .card-shadow {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            background: white;
-        }
+    /* ✅ LOGO FIX (plus de crop / plus de zoom) */
+    .logo-container {
+      width: 60px;
+      height: 60px;
+      border-radius: 9999px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border: 2px solid #f1f5f9;
+      padding: 6px;
+    }
 
-        .card-shadow:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
+    .logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
 
-        .img-zoom {
-            transition: transform 0.6s ease;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
 
-        .card-shadow:hover .img-zoom {
-            transform: scale(1.1);
-        }
+    .card-shadow {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: white;
+    }
 
-        .spinner {
-            border: 2px solid rgba(59, 130, 246, 0.1);
-            border-top: 2px solid #3b82f6;
-            border-radius: 50%;
-            width: 16px;
-            height: 16px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    </style>
+    .card-shadow:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .img-zoom {
+      transition: transform 0.6s ease;
+      width: 120%;
+      height: 120%;
+      object-fit: cover;
+    }
+
+    .card-shadow:hover .img-zoom {
+      transform: scale(1.1);
+    }
+
+    .spinner {
+      border: 2px solid rgba(59, 130, 246, 0.1);
+      border-top: 2px solid #3b82f6;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
+
 <body class="bg-white">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="logo-container shadow-sm">
+          <img src="./logo.png" alt="Logo Prepa'Day" />
+        </div>
+        <span class="text-xl font-extrabold tracking-tighter">PREPA'DAY</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#propos" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">À Propos</a>
+        <a href="#menu" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Le Menu</a>
+        <a href="#supplements" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Jus Frais</a>
+        <a href="#tarifs" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Tarifs</a>
+        <a href="#ia-coach" class="text-sm font-bold text-blue-600 hover:text-blue-800 transition tracking-tight">COACH IA ✨</a>
+        <a href="#avis" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Avis</a>
+        <a href="https://wa.me/212776245711" target="_blank" class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-600 transition duration-300">WhatsApp</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 hero-gradient">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-6 tracking-widest uppercase">
+        Mangez mieux, payez moins.
+      </span>
+
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8">
+        Chaque jour est<br /><span class="text-blue-600">préparé.</span>
+      </h1>
+
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Le premier service de meal prepping au Maroc conçu spécifiquement pour les étudiants et les actifs pressés.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#menu" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-blue-200 hover:bg-blue-700 transition">
+          Découvrir le menu
+        </a>
+        <a href="https://wa.me/212776245711" target="_blank" class="bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition">
+          Commander
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section À Propos -->
+  <section id="propos" class="py-24 max-w-7xl mx-auto px-6 border-b border-gray-50">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" alt="Préparation de repas sains" class="rounded-[2.5rem] shadow-2xl" />
+        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl hidden md:block border border-gray-50">
+          <p class="text-blue-600 font-extrabold text-2xl">100%</p>
+          <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Produits Frais</p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-extrabold mb-6 leading-tight">Pourquoi choisir PREPA'DAY ?</h2>
+        <p class="text-gray-500 mb-8 leading-relaxed">
+          Nous répondons à un défi majeur au Maroc : manger sainement sans sacrifier son temps ni son budget. Notre concept fusionne l'équilibre nutritionnel avec les saveurs authentiques du terroir.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 flex-shrink-0">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">Gain de Temps</h4>
+              <p class="text-sm text-gray-500">Oubliez les courses et la cuisine.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600 flex-shrink-0">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">Santé & Équilibre</h4>
+              <p class="text-sm text-gray-500">Des portions calculées selon vos besoins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-24 max-w-7xl mx-auto px-6 border-b border-gray-50">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-extrabold mb-2">Menu de la Semaine</h2>
+      <p class="text-gray-500">Cuisiné frais chaque jour, livré prêt à déguster.</p>
+    </div>
+
+    <div class="menu-grid">
+      <!-- Plat 1 -->
+      <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
+        <div class="h-64 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80" alt="Couscous Quinoa" class="img-zoom" />
+          <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider text-blue-600">Healthy Twist</div>
+        </div>
+        <div class="p-8 flex-grow">
+          <h3 class="text-xl font-bold mb-2">Couscous Quinoa & 7 Légumes</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Le classique revisité avec du quinoa. Riche en fibres et ultra léger.</p>
+          <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">420 Kcal</span>
+        </div>
+      </div>
+
+      <!-- Plat 2 -->
+      <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
+        <div class="h-64 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80" alt="Poulet Citron" class="img-zoom" />
+          <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Populaire</div>
+        </div>
+        <div class="p-8 flex-grow">
+          <h3 class="text-xl font-bold mb-2">Poulet Citron & Patates Douces</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Blanc de poulet mariné au citron confit, olives et patates douces rôties au four.</p>
+          <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">480 Kcal</span>
+        </div>
+      </div>
+
+      <!-- Plat 3 -->
+      <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
+        <div class="h-64 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80" alt="Saumon grillé" class="img-zoom" />
+          <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Premium</div>
+        </div>
+        <div class="p-8 flex-grow">
+          <h3 class="text-xl font-bold mb-2">Saumon Croustillant & Légumes</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Pavé de saumon frais grillé à la plancha, riz complet et légumes croquants.</p>
+          <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">450 Kcal</span>
+        </div>
+      </div>
+
+      <!-- Plat 4 -->
+      <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
+        <div class="h-64 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80" alt="Wok de poulet" class="img-zoom" />
+          <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Haute Protéine</div>
+        </div>
+        <div class="p-8 flex-grow">
+          <h3 class="text-xl font-bold mb-2">Wok de Poulet & Noix de Cajou</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Émincé de poulet sauté minute, poivrons multicolores et noix de cajou croquantes.</p>
+          <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">440 Kcal</span>
+        </div>
+      </div>
+
+      <!-- Plat 5 -->
+      <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
+        <div class="h-64 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=800&q=80" alt="Salade de fruits frais" class="img-zoom" />
+          <div class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Vitamines</div>
+        </div>
+        <div class="p-8 flex-grow">
+          <h3 class="text-xl font-bold mb-2">Salade de Fruits de Saison</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Fruits frais découpés chaque matin, menthe fraîche et touche de fleur d'oranger.</p>
+          <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">180 Kcal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Jus Fresh -->
+  <section id="supplements" class="py-24 bg-blue-600 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="inline-block py-1 px-3 rounded-full bg-blue-500 text-white text-[10px] font-black uppercase tracking-widest mb-4">Supplément</span>
+          <h2 class="text-4xl font-extrabold mb-6 leading-tight">Nos Jus Frais<br />Pressés à froid</h2>
+          <p class="opacity-80 mb-8 leading-relaxed">
+            Accompagnez vos repas avec nos jus 100% naturels. Pressés le matin même pour garder toutes les vitamines.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div class="bg-white/10 p-4 rounded-2xl border border-white/20">
+              <i class="fas fa-bolt mb-3 text-yellow-300"></i>
+              <h4 class="font-bold text-sm">Détox Green</h4>
+              <p class="text-[11px] opacity-70">Pomme, Épinard, Citron.</p>
+            </div>
+
+            <div class="bg-white/10 p-4 rounded-2xl border border-white/20">
+              <i class="fas fa-sun mb-3 text-orange-300"></i>
+              <h4 class="font-bold text-sm">L'Énergie Shot</h4>
+              <p class="text-[11px] opacity-70">Orange, Carotte, Gingembre.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=800&q=80" alt="Jus de fruits frais pressés" class="rounded-[2.5rem] shadow-2xl" />
+          <div class="absolute -top-6 -right-6 bg-yellow-400 text-black px-6 py-4 rounded-3xl font-extrabold rotate-12 shadow-xl border-4 border-blue-600">
+            +15 MAD
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarifs Section -->
+  <section id="tarifs" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-extrabold mb-12">Nos Tarifs</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 card-shadow">
+          <h3 class="text-2xl font-bold mb-4">Pack Academy</h3>
+          <p class="text-gray-400 text-sm mb-8">Pour les Étudiants.</p>
+          <div class="mb-8">
+            <span class="text-4xl font-extrabold text-blue-600">50 MAD</span>
+            <span class="text-gray-400 text-sm">/ repas</span>
+          </div>
+          <a href="https://wa.me/212776245711" target="_blank" class="block w-full py-4 rounded-2xl bg-gray-900 text-white font-bold hover:bg-blue-600 transition">
+            Commander
+          </a>
+        </div>
+
+        <div class="bg-white p-10 rounded-[2.5rem] border-2 border-blue-600 card-shadow">
+          <h3 class="text-2xl font-bold mb-4">Pack Business</h3>
+          <p class="text-gray-400 text-sm mb-8">Pour les Actifs.</p>
+          <div class="mb-8">
+            <span class="text-4xl font-extrabold text-blue-600">65 MAD</span>
+            <span class="text-gray-400 text-sm">/ repas</span>
+          </div>
+          <a href="https://wa.me/212776245711" target="_blank" class="block w-full py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition">
+            Commander
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Coach IA -->
+  <section id="ia-coach" class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-blue-50/50 rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-blue-100">
+        <div class="text-center mb-8">
+          <span class="text-blue-600 font-black text-[10px] uppercase tracking-widest bg-blue-100/50 px-3 py-1 rounded-full">Inteligence Artificielle</span>
+          <h2 class="text-3xl font-extrabold mt-4">Votre Coach Nutrition Perso ✨</h2>
+          <p class="text-gray-500 mt-2">Dites-moi votre objectif et je vous conseille parmi notre menu.</p>
+        </div>
+
+        <div class="space-y-4">
+          <textarea id="user-goal" placeholder="Ex: Je suis étudiant, j'ai besoin d'énergie pour mes examens..." class="w-full h-32 p-5 rounded-2xl bg-white border-2 border-gray-100 focus:border-blue-400 outline-none transition font-medium text-gray-700"></textarea>
+
+          <button onclick="askCoach()" id="ia-btn" class="w-full py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition flex items-center justify-center gap-3">
+            <span id="btn-text">Générer mon conseil personnalisé</span>
+            <div id="btn-spinner" class="spinner hidden"></div>
+          </button>
+
+          <div id="ai-response" class="hidden mt-6 p-6 rounded-2xl bg-white border border-blue-200 shadow-sm animate-in fade-in duration-500">
+            <p id="ai-text" class="text-blue-900 text-sm leading-relaxed italic"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avis -->
+  <section id="avis" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold mb-4">Ils nous font confiance</h2>
+        <p class="text-gray-500">Rejoignez la communauté PREPA'DAY.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+          <div class="flex items-center gap-4 mb-6">
+            <img src="https://i.pravatar.cc/150?u=yass" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="Avis client étudiant" />
+            <div>
+              <h4 class="font-bold text-sm">Yassine B.</h4>
+              <p class="text-xs text-blue-600 font-bold tracking-wider uppercase">Étudiant</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed italic">"C'est le meilleur rapport qualité/prix de Rabat."</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+          <div class="flex items-center gap-4 mb-6">
+            <img src="https://i.pravatar.cc/150?u=sara" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="Avis client salarié" />
+            <div>
+              <h4 class="font-bold text-sm">Sara L.</h4>
+              <p class="text-xs text-blue-600 font-bold tracking-wider uppercase">Salariée</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed italic">"Le pack business est devenu mon indispensable au bureau."</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+          <div class="flex items-center gap-4 mb-6">
+            <img src="https://i.pravatar.cc/150?u=mehdi_fit" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="Avis client sportif" />
+            <div>
+              <h4 class="font-bold text-sm">Salmaa T.</h4>
+              <p class="text-xs text-blue-600 font-bold tracking-wider uppercase">Sportif</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed italic">"Top pour suivre ses macros ! Portions généreuses."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex items-center gap-3">
+        <div class="logo-container !w-10 !h-10 border border-gray-100 bg-white">
+          <img src="./logo.png" alt="Logo Prepa'Day" />
+        </div>
+        <span class="font-extrabold tracking-tighter uppercase">Prepa'Day</span>
+      </div>
+
+      <div class="flex gap-8 text-sm font-bold text-gray-400">
+        <a href="https://www.instagram.com/prepa_day" target="_blank" class="hover:text-pink-600 transition"><i class="fab fa-instagram mr-2"></i>Instagram</a>
+        <a href="https://wa.me/212776245711" target="_blank" class="hover:text-green-600 transition"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+      </div>
+
+      <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">&copy; 2025 Prepa'Day Maroc.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Tooltip -->
+  <div class="whatsapp-tooltip">
+    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-600 shadow-sm bg-white flex items-center justify-center p-1">
+      <img src="./logo.png" alt="Logo Prepa'Day" class="w-full h-full object-contain" />
+    </div>
+
+    <div class="flex flex-col">
+      <span class="text-[11px] font-extrabold text-gray-900 leading-none mb-1">Passer Commande</span>
+      <span class="text-[10px] text-green-500 font-bold flex items-center gap-1">
+        <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+        WhatsApp Direct
+      </span>
+    </div>
+  </div>
+
+  <a href="https://wa.me/212776245711" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp text-3xl"></i>
+  </a>
+
+  <script>
+    const apiKey = ""; // La clé API est gérée par l'environnement
+
+    async function askCoach() {
+      const input = document.getElementById('user-goal');
+      const btnText = document.getElementById('btn-text');
+      const spinner = document.getElementById('btn-spinner');
+      const responseDiv = document.getElementById('ai-response');
+      const responseText = document.getElementById('ai-text');
+
+      if (!input.value.trim()) return;
+
+      btnText.classList.add('hidden');
+      spinner.classList.remove('hidden');
+
+      const systemPrompt =
+        "Tu es le coach IA de Prepa'Day Maroc. Recommande des repas parmi le menu (Couscous Quinoa, Poulet Citron, Saumon Grillé, Wok Poulet) selon l'objectif de l'utilisateur. Sois chaleureux, utilise des emojis et reste court (max 3 phrases).";
+      const userPrompt = input.value;
+
+      try {
+        const response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: userPrompt }] }],
+              systemInstruction: { parts: [{ text: systemPrompt }] }
+            })
+          }
+        );
+
+        const data = await response.json();
+        const aiResponse =
+          data.candidates?.[0]?.content?.parts?.[0]?.text ||
+          "Désolé, je n'ai pas pu générer de réponse. Réessaie !";
+
+        responseText.innerText = aiResponse;
+        responseDiv.classList.remove('hidden');
+      } catch (error) {
+        console.error(error);
+        responseText.innerText = "Erreur de connexion avec l'IA. Contacte-nous sur WhatsApp !";
+        responseDiv.classList.remove('hidden');
+      } finally {
+        btnText.classList.remove('hidden');
+        spinner.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
 
     <!-- Navigation -->
     <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
