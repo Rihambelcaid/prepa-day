@@ -56,19 +56,17 @@
             border: 1px solid #f1f5f9;
         }
 
-        .logo-circle {
-            width: 40px;
-            height: 40px;
-            background: #2563eb;
-            border-radius: 50%;
+        /* Style circulaire pour le logo */
+        .logo-container {
+            width: 48px;
+            height: 48px;
+            border-radius: 9999px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: 800;
-            font-size: 10px;
-            text-align: center;
-            line-height: 1;
+            background: white;
+            border: 2px solid #f1f5f9;
         }
 
         .menu-grid {
@@ -104,19 +102,23 @@
 </head>
 <body class="bg-white">
 
-    <!-- Header / Navigation -->
+    <!-- Navigation -->
     <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold shadow-lg shadow-blue-200">P</div>
+                <div class="logo-container shadow-sm">
+                    <!-- Utilisation du fichier logo.png local -->
+                    <img src="logo.png" alt="Logo Prepa'Day" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=P&background=2563eb&color=fff'">
+                </div>
                 <span class="text-xl font-extrabold tracking-tighter">PREPA'DAY</span>
             </div>
             <div class="hidden md:flex items-center gap-8">
                 <a href="#propos" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">À Propos</a>
                 <a href="#menu" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Le Menu</a>
+                <a href="#supplements" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition text-blue-600 font-bold">Jus Fresh</a>
                 <a href="#tarifs" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Tarifs</a>
                 <a href="#avis" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Avis</a>
-                <a href="https://wa.me/212776245711" class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-600 transition duration-300">Commander via WhatsApp</a>
+                <a href="https://wa.me/212776245711" target="_blank" class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-600 transition duration-300">WhatsApp</a>
             </div>
         </div>
     </nav>
@@ -131,106 +133,152 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#menu" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-blue-200 hover:bg-blue-700 transition">Découvrir le menu</a>
-                <a href="https://wa.me/212776245711" class="bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition">Commander via WhatsApp</a>
+                <a href="https://wa.me/212776245711" target="_blank" class="bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition">Commander</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section id="propos" class="py-24 max-w-7xl mx-auto px-6 border-b border-gray-50">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" alt="Préparation de repas sains" class="rounded-[2.5rem] shadow-2xl">
+                <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl hidden md:block border border-gray-50">
+                    <p class="text-blue-600 font-extrabold text-2xl">100%</p>
+                    <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Produits Frais</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl font-extrabold mb-6 leading-tight">Pourquoi choisir PREPA'DAY ?</h2>
+                <p class="text-gray-500 mb-8 leading-relaxed">
+                    Nous répondons à un défi majeur au Maroc : manger sainement sans sacrifier son temps ni son budget. Notre concept fusionne l'équilibre nutritionnel avec les saveurs authentiques du terroir.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 flex-shrink-0">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Gain de Temps</h4>
+                            <p class="text-sm text-gray-500">Oubliez les courses et la cuisine.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600 flex-shrink-0">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Santé & Équilibre</h4>
+                            <p class="text-sm text-gray-500">Des portions calculées selon vos besoins.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Menu Section -->
     <section id="menu" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="flex justify-between items-end mb-16">
-            <div>
-                <h2 class="text-3xl font-extrabold mb-2">Menu de la Semaine</h2>
-                <p class="text-gray-500">Des repas frais, préparés avec amour.</p>
-            </div>
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-extrabold mb-2">Menu de la Semaine</h2>
+            <p class="text-gray-500">Cuisiné frais chaque jour, livré prêt à déguster.</p>
         </div>
         
         <div class="menu-grid">
-            <!-- Plat 1 - Couscous -->
+            <!-- Plat 1 -->
             <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
                 <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80" alt="Couscous Quinoa et Légumes" class="img-zoom">
+                    <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80" alt="Couscous Quinoa" class="img-zoom">
                     <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider text-blue-600">Healthy Twist</div>
                 </div>
                 <div class="p-8 flex-grow">
                     <h3 class="text-xl font-bold mb-2">Couscous Quinoa & 7 Légumes</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Le classique revisité avec du quinoa pour plus de protéines. Léger et digeste.</p>
-                    <div class="flex items-center gap-2">
-                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">420 Kcal</span>
-                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Le classique revisité avec du quinoa. Riche en fibres et ultra léger.</p>
+                    <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">420 Kcal</span>
                 </div>
             </div>
 
-            <!-- Plat 2 - Poulet Citron -->
+            <!-- Plat 2 -->
             <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
                 <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80" alt="Poulet Citron et Patates Douces" class="img-zoom">
+                    <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80" alt="Poulet Citron" class="img-zoom">
                     <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Populaire</div>
                 </div>
                 <div class="p-8 flex-grow">
-                    <h3 class="text-xl font-bold mb-2">Poulet Citron (Low-Fat)</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Blanc de poulet tendre, olives, citron confit et patates douces rôties sans huile.</p>
-                    <div class="flex items-center gap-2">
-                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">480 Kcal</span>
-                    </div>
+                    <h3 class="text-xl font-bold mb-2">Poulet Citron & Patates Douces</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Blanc de poulet mariné au citron confit, olives et patates douces rôties au four.</p>
+                    <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">480 Kcal</span>
                 </div>
             </div>
 
-            <!-- Plat 3 - Saumon Grillé & Légumes Croquants -->
+            <!-- Plat 3 -->
             <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
                 <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80" alt="Saumon grillé et légumes frais" class="img-zoom">
-                    <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Favori</div>
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80" alt="Saumon grillé" class="img-zoom">
+                    <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Premium</div>
                 </div>
                 <div class="p-8 flex-grow">
-                    <h3 class="text-xl font-bold mb-2">Saumon Grillé & Légumes Croquants</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Pavé de saumon frais grillé à l'unilatérale, servi avec un wok de haricots verts et carottes fondantes.</p>
-                    <div class="flex items-center gap-2">
-                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">430 Kcal</span>
-                    </div>
+                    <h3 class="text-xl font-bold mb-2">Saumon Croustillant & Légumes</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Pavé de saumon frais grillé à la plancha, riz complet et légumes croquants.</p>
+                    <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">450 Kcal</span>
                 </div>
             </div>
 
-            <!-- Plat 4 - Kefta Grillée & Brocolis Vapeur (IMAGE FIXÉE) -->
+            <!-- Plat 4 -->
             <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
                 <div class="h-64 overflow-hidden relative">
-                    <!-- Utilisation d'une image Unsplash plus robuste pour la Kefta/Boulettes -->
-                    <img src="https://images.unsplash.com/photo-1529042410759-ad823e13f182?auto=format&fit=crop&w=800&q=80" alt="Kefta grillée marocaine et brocolis" class="img-zoom">
-                    <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Protéines +</div>
+                    <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80" alt="Wok de poulet" class="img-zoom">
+                    <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Haute Protéine</div>
                 </div>
                 <div class="p-8 flex-grow">
-                    <h3 class="text-xl font-bold mb-2">Kefta Grillée & Brocolis Vapeur</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Boulettes de bœuf extra-maigre assaisonnées à la marocaine, accompagnées de brocolis frais à la vapeur.</p>
-                    <div class="flex items-center gap-2">
-                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">450 Kcal</span>
-                    </div>
+                    <h3 class="text-xl font-bold mb-2">Wok de Poulet & Noix de Cajou</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Émincé de poulet sauté minute, poivrons multicolores et noix de cajou croquantes.</p>
+                    <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">440 Kcal</span>
                 </div>
             </div>
 
-            <!-- Plat 5 - Bowl Lentilles -->
-            <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Bowl de lentilles beldi" class="img-zoom">
-                </div>
-                <div class="p-8 flex-grow">
-                    <h3 class="text-xl font-bold mb-2">Bowl Beldi Lentilles & Avocat</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Lentilles façon "Addas", avocat frais, œuf poché et sauce yaourt à la menthe.</p>
-                    <div class="flex items-center gap-2">
-                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">390 Kcal</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plat 6 - Dessert -->
+            <!-- Plat 5 -->
             <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
                 <div class="h-64 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=800&q=80" alt="Salade de fruits frais" class="img-zoom">
+                    <div class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Vitamines</div>
                 </div>
                 <div class="p-8 flex-grow">
-                    <h3 class="text-xl font-bold mb-2">Salade Fruits & Fleur d'Oranger</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Mélange de fruits de saison parfumés à l'eau de fleur d'oranger et amandes croustillantes.</p>
-                    <div class="flex items-center gap-2">
-                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">180 Kcal</span>
+                    <h3 class="text-xl font-bold mb-2">Salade de Fruits de Saison</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Fruits frais découpés chaque matin, menthe fraîche et touche de fleur d'oranger.</p>
+                    <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">180 Kcal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Jus Fresh -->
+    <section id="supplements" class="py-24 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-500 text-white text-[10px] font-black uppercase tracking-widest mb-4">Supplément</span>
+                    <h2 class="text-4xl font-extrabold mb-6 leading-tight">Nos Jus Frais<br>Pressés à froid</h2>
+                    <p class="opacity-80 mb-8 leading-relaxed">
+                        Accompagnez vos repas avec nos jus 100% naturels. Pressés le matin même pour garder toutes les vitamines.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-white/10 p-4 rounded-2xl border border-white/20">
+                            <i class="fas fa-bolt mb-3 text-yellow-300"></i>
+                            <h4 class="font-bold text-sm">Détox Green</h4>
+                            <p class="text-[11px] opacity-70">Pomme, Épinard, Citron.</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-2xl border border-white/20">
+                            <i class="fas fa-sun mb-3 text-orange-300"></i>
+                            <h4 class="font-bold text-sm">L'Énergie Shot</h4>
+                            <p class="text-[11px] opacity-70">Orange, Carotte, Gingembre.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=800&q=80" alt="Jus de fruits frais pressés" class="rounded-[2.5rem] shadow-2xl">
+                    <div class="absolute -top-6 -right-6 bg-yellow-400 text-black px-6 py-4 rounded-3xl font-extrabold rotate-12 shadow-xl border-4 border-blue-600">
+                        +15 MAD
                     </div>
                 </div>
             </div>
@@ -240,34 +288,94 @@
     <!-- Tarifs Section -->
     <section id="tarifs" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-extrabold mb-4">Nos Formules</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">
+            <h2 class="text-4xl font-extrabold mb-12">Nos Tarifs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 card-shadow">
                     <h3 class="text-2xl font-bold mb-4">Pack Academy</h3>
+                    <p class="text-gray-400 text-sm mb-8">Pour les Étudiants.</p>
                     <div class="mb-8">
                         <span class="text-4xl font-extrabold text-blue-600">50 MAD</span>
                         <span class="text-gray-400 text-sm">/ repas</span>
                     </div>
-                    <a href="https://wa.me/212776245711" class="block w-full py-4 rounded-2xl bg-gray-900 text-white font-bold hover:bg-blue-600 transition">Commander</a>
+                    <a href="https://wa.me/212776245711" target="_blank" class="block w-full py-4 rounded-2xl bg-gray-900 text-white font-bold hover:bg-blue-600 transition">Commander</a>
                 </div>
                 <div class="bg-white p-10 rounded-[2.5rem] border-2 border-blue-600 card-shadow">
                     <h3 class="text-2xl font-bold mb-4">Pack Business</h3>
+                    <p class="text-gray-400 text-sm mb-8">Pour les Actifs.</p>
                     <div class="mb-8">
                         <span class="text-4xl font-extrabold text-blue-600">65 MAD</span>
                         <span class="text-gray-400 text-sm">/ repas</span>
                     </div>
-                    <a href="https://wa.me/212776245711" class="block w-full py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition">Commander</a>
+                    <a href="https://wa.me/212776245711" target="_blank" class="block w-full py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition">Commander</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avis -->
+    <section id="avis" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold mb-4">Ils nous font confiance</h2>
+                <p class="text-gray-500">Rejoignez la communauté PREPA'DAY.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-3xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://i.pravatar.cc/150?u=yass" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="Avis client étudiant">
+                        <div><h4 class="font-bold text-sm">Yassine B.</h4><p class="text-xs text-blue-600 font-bold tracking-wider uppercase">Étudiant</p></div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed italic">"C'est le meilleur rapport qualité/prix de Rabat."</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-3xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://i.pravatar.cc/150?u=sara" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="Avis client salarié">
+                        <div><h4 class="font-bold text-sm">Sara L.</h4><p class="text-xs text-blue-600 font-bold tracking-wider uppercase">Salariée</p></div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed italic">"Le pack business est devenu mon indispensable au bureau."</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-3xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <!-- Rétablissement de Mehdi T. -->
+                        <img src="https://i.pravatar.cc/150?u=mehdi_fit" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="Avis client sportif">
+                        <div><h4 class="font-bold text-sm">Salmaa T.</h4><p class="text-xs text-blue-600 font-bold tracking-wider uppercase">Sportif</p></div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed italic">"Top pour suivre ses macros ! Portions généreuses."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-gray-100 text-center">
-        <p class="text-gray-400 font-bold uppercase tracking-widest text-xs">&copy; 2025 Prepa'Day Maroc.</p>
+    <footer class="py-12 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full overflow-hidden border border-gray-100 bg-white">
+                    <img src="logo.png" alt="Logo Prepa'Day" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=P&background=111&color=fff'">
+                </div>
+                <span class="font-extrabold tracking-tighter uppercase">Prepa'Day</span>
+            </div>
+            <div class="flex gap-8 text-sm font-bold text-gray-400">
+                <a href="https://www.instagram.com/prepa_day" target="_blank" class="hover:text-pink-600 transition"><i class="fab fa-instagram mr-2"></i>Instagram</a>
+                <a href="https://wa.me/212776245711" target="_blank" class="hover:text-green-600 transition"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+            </div>
+            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">&copy; 2025 Prepa'Day Maroc.</p>
+        </div>
     </footer>
 
-    <!-- WhatsApp Floating -->
+    <!-- WhatsApp Layout -->
+    <div class="whatsapp-tooltip">
+        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-600 shadow-sm">
+            <img src="logo.png" alt="Logo Prepa'Day" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=P&background=2563eb&color=fff'">
+        </div>
+        <div class="flex flex-col">
+            <span class="text-[11px] font-extrabold text-gray-900 leading-none mb-1">Passer Commande</span>
+            <span class="text-[10px] text-green-500 font-bold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                WhatsApp Direct
+            </span>
+        </div>
+    </div>
     <a href="https://wa.me/212776245711" target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
