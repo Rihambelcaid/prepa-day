@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepa'Day - Meal Prep Maroc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            color: #1a1a1a;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-tooltip {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: white;
+            padding: 12px 18px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            border: 1px solid #f1f5f9;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 10px;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card-shadow {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+
+        .card-shadow:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .img-zoom {
+            transition: transform 0.6s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-shadow:hover .img-zoom {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header / Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold shadow-lg shadow-blue-200">P</div>
+                <span class="text-xl font-extrabold tracking-tighter">PREPA'DAY</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#propos" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">À Propos</a>
+                <a href="#menu" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Le Menu</a>
+                <a href="#tarifs" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Tarifs</a>
+                <a href="#avis" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Avis</a>
+                <a href="https://wa.me/212776245711" class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-600 transition duration-300">Commander via WhatsApp</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 hero-gradient">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-6 tracking-widest uppercase">Mangez mieux, payez moins.</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8">Chaque jour est<br><span class="text-blue-600">préparé.</span></h1>
+            <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Le premier service de meal prepping au Maroc conçu spécifiquement pour les étudiants et les actifs pressés.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-blue-200 hover:bg-blue-700 transition">Découvrir le menu</a>
+                <a href="https://wa.me/212776245711" class="bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition">Commander via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-end mb-16">
+            <div>
+                <h2 class="text-3xl font-extrabold mb-2">Menu de la Semaine</h2>
+                <p class="text-gray-500">Des repas frais, préparés avec amour.</p>
+            </div>
+        </div>
+        
+        <div class="menu-grid">
+            <!-- Plat 1 - Couscous -->
+            <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80" alt="Couscous Quinoa et Légumes" class="img-zoom">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider text-blue-600">Healthy Twist</div>
+                </div>
+                <div class="p-8 flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Couscous Quinoa & 7 Légumes</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Le classique revisité avec du quinoa pour plus de protéines. Léger et digeste.</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">420 Kcal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plat 2 - Poulet Citron -->
+            <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80" alt="Poulet Citron et Patates Douces" class="img-zoom">
+                    <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Populaire</div>
+                </div>
+                <div class="p-8 flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Poulet Citron (Low-Fat)</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Blanc de poulet tendre, olives, citron confit et patates douces rôties sans huile.</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">480 Kcal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plat 3 - Saumon Grillé & Légumes Croquants -->
+            <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80" alt="Saumon grillé et légumes frais" class="img-zoom">
+                    <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Favori</div>
+                </div>
+                <div class="p-8 flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Saumon Grillé & Légumes Croquants</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Pavé de saumon frais grillé à l'unilatérale, servi avec un wok de haricots verts et carottes fondantes.</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">430 Kcal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plat 4 - Kefta Grillée & Brocolis Vapeur (IMAGE FIXÉE) -->
+            <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
+                <div class="h-64 overflow-hidden relative">
+                    <!-- Utilisation d'une image Unsplash plus robuste pour la Kefta/Boulettes -->
+                    <img src="https://images.unsplash.com/photo-1529042410759-ad823e13f182?auto=format&fit=crop&w=800&q=80" alt="Kefta grillée marocaine et brocolis" class="img-zoom">
+                    <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Protéines +</div>
+                </div>
+                <div class="p-8 flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Kefta Grillée & Brocolis Vapeur</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Boulettes de bœuf extra-maigre assaisonnées à la marocaine, accompagnées de brocolis frais à la vapeur.</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">450 Kcal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plat 5 - Bowl Lentilles -->
+            <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Bowl de lentilles beldi" class="img-zoom">
+                </div>
+                <div class="p-8 flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Bowl Beldi Lentilles & Avocat</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Lentilles façon "Addas", avocat frais, œuf poché et sauce yaourt à la menthe.</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">390 Kcal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plat 6 - Dessert -->
+            <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=800&q=80" alt="Salade de fruits frais" class="img-zoom">
+                </div>
+                <div class="p-8 flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Salade Fruits & Fleur d'Oranger</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Mélange de fruits de saison parfumés à l'eau de fleur d'oranger et amandes croustillantes.</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">180 Kcal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarifs Section -->
+    <section id="tarifs" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold mb-4">Nos Formules</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">
+                <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 card-shadow">
+                    <h3 class="text-2xl font-bold mb-4">Pack Academy</h3>
+                    <div class="mb-8">
+                        <span class="text-4xl font-extrabold text-blue-600">50 MAD</span>
+                        <span class="text-gray-400 text-sm">/ repas</span>
+                    </div>
+                    <a href="https://wa.me/212776245711" class="block w-full py-4 rounded-2xl bg-gray-900 text-white font-bold hover:bg-blue-600 transition">Commander</a>
+                </div>
+                <div class="bg-white p-10 rounded-[2.5rem] border-2 border-blue-600 card-shadow">
+                    <h3 class="text-2xl font-bold mb-4">Pack Business</h3>
+                    <div class="mb-8">
+                        <span class="text-4xl font-extrabold text-blue-600">65 MAD</span>
+                        <span class="text-gray-400 text-sm">/ repas</span>
+                    </div>
+                    <a href="https://wa.me/212776245711" class="block w-full py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition">Commander</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-100 text-center">
+        <p class="text-gray-400 font-bold uppercase tracking-widest text-xs">&copy; 2025 Prepa'Day Maroc.</p>
+    </footer>
+
+    <!-- WhatsApp Floating -->
+    <a href="https://wa.me/212776245711" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+</body>
+</html>
