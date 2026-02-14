@@ -69,8 +69,8 @@
         }
 
         .logo-container img {
-            width: 130%;
-            height: 130%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
 
@@ -122,7 +122,8 @@
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="logo-container shadow-sm">
-                    <img src="logo.jpg" alt="Logo Prepa'Day" onerror="this.src='https://ui-avatars.com/api/?name=P&background=2563eb&color=fff'">
+                    <!-- Modification ici : logo.png au lieu de logo.jpg -->
+                    <img src="./logo.png" alt="Logo Prepa'Day" onerror="this.src='https://ui-avatars.com/api/?name=P&background=2563eb&color=fff'">
                 </div>
                 <span class="text-xl font-extrabold tracking-tighter">PREPA'DAY</span>
             </div>
@@ -132,7 +133,6 @@
                 <a href="#supplements" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Jus Frais</a>
                 <a href="#tarifs" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Tarifs</a>
                 <a href="#ia-coach" class="text-sm font-bold text-blue-600 hover:text-blue-800 transition tracking-tight">COACH IA ✨</a>
-                <a href="#avis" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Avis</a>
                 <a href="https://wa.me/212776245711" target="_blank" class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-600 transition duration-300">WhatsApp</a>
             </div>
         </div>
@@ -238,92 +238,6 @@
                     <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">450 Kcal</span>
                 </div>
             </div>
-
-            <!-- Plat 4 -->
-            <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80" alt="Wok de poulet" class="img-zoom">
-                    <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Haute Protéine</div>
-                </div>
-                <div class="p-8 flex-grow">
-                    <h3 class="text-xl font-bold mb-2">Wok de Poulet & Noix de Cajou</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Émincé de poulet sauté minute, poivrons multicolores et noix de cajou croquantes.</p>
-                    <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">440 Kcal</span>
-                </div>
-            </div>
-
-            <!-- Plat 5 -->
-            <div class="border border-gray-100 rounded-[2rem] overflow-hidden card-shadow">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=800&q=80" alt="Salade de fruits frais" class="img-zoom">
-                    <div class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Vitamines</div>
-                </div>
-                <div class="p-8 flex-grow">
-                    <h3 class="text-xl font-bold mb-2">Salade de Fruits de Saison</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Fruits frais découpés chaque matin, menthe fraîche et touche de fleur d'oranger.</p>
-                    <span class="text-[10px] font-bold text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">180 Kcal</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Jus Fresh -->
-    <section id="supplements" class="py-24 bg-blue-600 text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span class="inline-block py-1 px-3 rounded-full bg-blue-500 text-white text-[10px] font-black uppercase tracking-widest mb-4">Supplément</span>
-                    <h2 class="text-4xl font-extrabold mb-6 leading-tight">Nos Jus Frais<br>Pressés à froid</h2>
-                    <p class="opacity-80 mb-8 leading-relaxed">
-                        Accompagnez vos repas avec nos jus 100% naturels. Pressés le matin même pour garder toutes les vitamines.
-                    </p>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="bg-white/10 p-4 rounded-2xl border border-white/20">
-                            <i class="fas fa-bolt mb-3 text-yellow-300"></i>
-                            <h4 class="font-bold text-sm">Détox Green</h4>
-                            <p class="text-[11px] opacity-70">Pomme, Épinard, Citron.</p>
-                        </div>
-                        <div class="bg-white/10 p-4 rounded-2xl border border-white/20">
-                            <i class="fas fa-sun mb-3 text-orange-300"></i>
-                            <h4 class="font-bold text-sm">L'Énergie Shot</h4>
-                            <p class="text-[11px] opacity-70">Orange, Carotte, Gingembre.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=800&q=80" alt="Jus de fruits frais pressés" class="rounded-[2.5rem] shadow-2xl">
-                    <div class="absolute -top-6 -right-6 bg-yellow-400 text-black px-6 py-4 rounded-3xl font-extrabold rotate-12 shadow-xl border-4 border-blue-600">
-                        +15 MAD
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tarifs Section -->
-    <section id="tarifs" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-extrabold mb-12">Nos Tarifs</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 card-shadow">
-                    <h3 class="text-2xl font-bold mb-4">Pack Academy</h3>
-                    <p class="text-gray-400 text-sm mb-8">Pour les Étudiants.</p>
-                    <div class="mb-8">
-                        <span class="text-4xl font-extrabold text-blue-600">50 MAD</span>
-                        <span class="text-gray-400 text-sm">/ repas</span>
-                    </div>
-                    <a href="https://wa.me/212776245711" target="_blank" class="block w-full py-4 rounded-2xl bg-gray-900 text-white font-bold hover:bg-blue-600 transition">Commander</a>
-                </div>
-                <div class="bg-white p-10 rounded-[2.5rem] border-2 border-blue-600 card-shadow">
-                    <h3 class="text-2xl font-bold mb-4">Pack Business</h3>
-                    <p class="text-gray-400 text-sm mb-8">Pour les Actifs.</p>
-                    <div class="mb-8">
-                        <span class="text-4xl font-extrabold text-blue-600">65 MAD</span>
-                        <span class="text-gray-400 text-sm">/ repas</span>
-                    </div>
-                    <a href="https://wa.me/212776245711" target="_blank" class="block w-full py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition">Commander</a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -332,7 +246,7 @@
         <div class="max-w-4xl mx-auto px-6">
             <div class="bg-blue-50/50 rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-blue-100">
                 <div class="text-center mb-8">
-                    <span class="text-blue-600 font-black text-[10px] uppercase tracking-widest bg-blue-100/50 px-3 py-1 rounded-full">Inteligence Artificielle</span>
+                    <span class="text-blue-600 font-black text-[10px] uppercase tracking-widest bg-blue-100/50 px-3 py-1 rounded-full">Intelligence Artificielle</span>
                     <h2 class="text-3xl font-extrabold mt-4">Votre Coach Nutrition Perso ✨</h2>
                     <p class="text-gray-500 mt-2">Dites-moi votre objectif et je vous conseille parmi notre menu.</p>
                 </div>
@@ -353,45 +267,12 @@
         </div>
     </section>
 
-    <!-- Avis -->
-    <section id="avis" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold mb-4">Ils nous font confiance</h2>
-                <p class="text-gray-500">Rejoignez la communauté PREPA'DAY.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-                    <div class="flex items-center gap-4 mb-6">
-                        <img src="https://i.pravatar.cc/150?u=yass" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="Avis client étudiant">
-                        <div><h4 class="font-bold text-sm">Yassine B.</h4><p class="text-xs text-blue-600 font-bold tracking-wider uppercase">Étudiant</p></div>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed italic">"C'est le meilleur rapport qualité/prix de Rabat."</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-                    <div class="flex items-center gap-4 mb-6">
-                        <img src="https://i.pravatar.cc/150?u=sara" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="Avis client salarié">
-                        <div><h4 class="font-bold text-sm">Sara L.</h4><p class="text-xs text-blue-600 font-bold tracking-wider uppercase">Salariée</p></div>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed italic">"Le pack business est devenu mon indispensable au bureau."</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-                    <div class="flex items-center gap-4 mb-6">
-                        <img src="https://i.pravatar.cc/150?u=mehdi_fit" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="Avis client sportif">
-                        <div><h4 class="font-bold text-sm">Salmaa T.</h4><p class="text-xs text-blue-600 font-bold tracking-wider uppercase">Sportif</p></div>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed italic">"Top pour suivre ses macros ! Portions généreuses."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="py-12 border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-3">
                 <div class="logo-container !w-10 !h-10 border border-gray-100 bg-white">
-                    <img src="logo.jpg" alt="Logo Prepa'Day" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=P&background=111&color=fff'">
+                    <img src="./logo.png" alt="Logo Prepa'Day" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=P&background=111&color=fff'">
                 </div>
                 <span class="font-extrabold tracking-tighter uppercase">Prepa'Day</span>
             </div>
@@ -403,10 +284,10 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Layout -->
+    <!-- WhatsApp Float -->
     <div class="whatsapp-tooltip">
         <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-600 shadow-sm">
-            <img src="logo.jpg" alt="Logo Prepa'Day" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=P&background=2563eb&color=fff'">
+            <img src="./logo.png" alt="Logo Prepa'Day" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=P&background=2563eb&color=fff'">
         </div>
         <div class="flex flex-col">
             <span class="text-[11px] font-extrabold text-gray-900 leading-none mb-1">Passer Commande</span>
