@@ -11,6 +11,12 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
+    :root {
+      --brand-purple: #4C0A63;
+      --brand-yellow: #FDE047;
+      --brand-yellow-dark: #eab308;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       scroll-behavior: smooth;
@@ -19,7 +25,7 @@
     }
 
     .hero-gradient {
-      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      background: linear-gradient(135deg, #fdf4ff 0%, #faefff 100%);
     }
 
     .whatsapp-float {
@@ -44,8 +50,8 @@
     }
 
     .logo-container {
-      width: 55px;
-      height: 55px;
+      width: 85px; 
+      height: 85px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -69,7 +75,7 @@
     }
 
     .menu-card:hover {
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 15px 30px rgba(76, 10, 99, 0.12);
       transform: translateY(-5px);
     }
 
@@ -114,43 +120,74 @@
   </style>
 </head>
 
-<body>
+<body id="top">
 
   <!-- Navigation -->
-  <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-      <div class="flex items-center gap-3">
+  <nav class="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+      <a href="#top" class="flex items-center gap-4 hover:opacity-80 transition">
         <div class="logo-container">
-          <!-- Logo configuré pour GitHub -->
           <img src="logo.png" alt="Prepa'Day Logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/706/706164.png'">
         </div>
-        <span class="text-xl font-extrabold tracking-tighter">PREPA'DAY</span>
-      </div>
+        <span class="text-2xl font-extrabold tracking-tighter text-[#4C0A63]">PREPA'DAY</span>
+      </a>
 
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#propos" class="text-sm font-semibold text-gray-600 hover:text-blue-600">À Propos</a>
-        <a href="#menu" class="text-sm font-semibold text-gray-600 hover:text-blue-600">Le Menu</a>
-        <a href="#tarifs" class="text-sm font-semibold text-gray-600 hover:text-blue-600">Tarifs</a>
-        <a href="#avis" class="text-sm font-semibold text-gray-600 hover:text-blue-600">Avis</a>
-        <a href="https://www.instagram.com/prepa_day" target="_blank" class="text-sm font-semibold text-gray-600 hover:text-pink-600"><i class="fab fa-instagram mr-1"></i>Instagram</a>
-        <a href="#ia-coach" class="text-sm font-bold text-blue-600 tracking-tight">COACH IA ✨</a>
-        <a href="https://wa.me/212776245711" target="_blank" class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-600 transition">Commander</a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#propos" class="text-sm font-semibold text-gray-600 hover:text-[#4C0A63]">À Propos</a>
+        <a href="#menu" class="text-sm font-semibold text-gray-600 hover:text-[#4C0A63]">Menu</a>
+        <a href="#jus" class="text-sm font-semibold text-gray-600 hover:text-[#4C0A63]">Jus</a>
+        <a href="#tarifs" class="text-sm font-semibold text-gray-600 hover:text-[#4C0A63]">Tarifs</a>
+        <a href="#avis" class="text-sm font-semibold text-gray-600 hover:text-[#4C0A63]">Avis</a>
+        <a href="#ia-coach" class="text-sm font-bold text-[#4C0A63] tracking-tight">COACH IA ✨</a>
+        <a href="https://www.instagram.com/prepaday.ma/" target="_blank" class="text-gray-600 hover:text-pink-600 transition text-xl">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/212776245711" target="_blank" class="bg-[#4C0A63] text-white px-6 py-3 rounded-full text-sm font-bold hover:opacity-90 transition shadow-lg shadow-purple-200">Commander</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="pt-32 pb-20 hero-gradient">
+  <section class="pt-40 pb-20 hero-gradient">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8">
-        Mangez mieux,<br><span class="text-blue-600">Payez moins.</span>
+        Mangez mieux,<br><span class="text-[#4C0A63]">Payez moins.</span>
       </h1>
       <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Vos repas sains livrés en boîtes hermétiques. Gagnez 10h par semaine sur la cuisine et les courses.
+        Vos repas sains livrés en boîtes hermétiques au Maroc. Gagnez 10h par semaine sur la cuisine et les courses.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#menu" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-blue-200">Voir le Menu</a>
-        <a href="#propos" class="bg-white border border-gray-200 px-8 py-4 rounded-2xl font-bold">À propos</a>
+        <a href="#menu" class="bg-[#4C0A63] text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-purple-200 transition-transform hover:scale-105">Voir le Menu</a>
+        <a href="#propos" class="bg-white border-2 border-gray-100 px-8 py-4 rounded-2xl font-bold text-[#4C0A63] hover:bg-gray-50 transition">Notre Concept</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section À Propos -->
+  <section id="propos" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" alt="Cuisine saine" class="rounded-[2.5rem] shadow-2xl">
+        </div>
+        <div>
+          <h2 class="text-3xl font-extrabold mb-6 text-[#4C0A63]">Pourquoi Prepa'Day ?</h2>
+          <p class="text-gray-600 mb-8 leading-relaxed">Nous démocratisons l'alimentation saine au Maroc. Notre mission est de vous offrir des repas équilibrés, délicieux et abordables.</p>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-[#4C0A63]"></i>
+              <p>Gain de 10h de temps libre par semaine</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-[#4C0A63]"></i>
+              <p>Ingrédients frais et locaux</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-[#4C0A63]"></i>
+              <p>Zéro gaspillage alimentaire</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -158,163 +195,128 @@
   <!-- Section Menu -->
   <section id="menu" class="py-24 max-w-7xl mx-auto px-6">
     <div class="mb-12 text-center">
-      <h2 class="text-3xl font-extrabold mb-2">Les Plats de la Semaine</h2>
-      <p class="text-gray-500 text-sm">Des compositions nutritives pour chaque jour.</p>
+      <h2 class="text-3xl font-extrabold mb-2 text-[#4C0A63]">Le Menu de la Semaine</h2>
+      <p class="text-gray-500 text-sm">Des recettes pensées pour votre bien-être.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- Plat 1: Buffalo Chicken Wraps -->
+      <!-- Repas 1 -->
       <div class="menu-card">
         <div class="meal-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=600&q=80" alt="Buffalo Chicken Wraps">
+          <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=600&q=80" alt="Buffalo Wraps">
           <span class="badge-label bg-orange-100 text-orange-600">Populaire</span>
         </div>
-        <div class="p-6 flex-grow">
+        <div class="p-6">
           <h3 class="font-bold text-lg mb-2">Buffalo Chicken Wraps</h3>
-          <p class="text-gray-500 text-xs mb-4">Savory buffalo chicken wrapped in soft tortillas with crunchy cucumber, red onions, tomatoes, and a drizzle of creamy ranch dressing.</p>
-        </div>
-        <div class="px-6 pb-6 mt-auto">
-          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400">
+          <p class="text-gray-500 text-xs mb-4">Poulet savoureux, crudités et sauce ranch légère.</p>
+          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400 border-t pt-4">
             <span><i class="fas fa-fire-alt mr-1"></i> 480 kcal</span>
-            <span><i class="fas fa-dumbbell mr-1"></i> 28g Protéines</span>
+            <span><i class="fas fa-dumbbell mr-1"></i> 28g Prot</span>
           </div>
         </div>
       </div>
 
-      <!-- Plat 2: Teriyaki Chicken -->
+      <!-- Repas 2 -->
       <div class="menu-card">
         <div class="meal-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=600&q=80" alt="Teriyaki Chicken Stir Fry">
-          <span class="badge-label bg-blue-100 text-blue-600">Saveur Asie</span>
+          <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=600&q=80" alt="Teriyaki">
+          <span class="badge-label bg-blue-100 text-blue-600">Nutrition</span>
         </div>
-        <div class="p-6 flex-grow">
+        <div class="p-6">
           <h3 class="font-bold text-lg mb-2">Teriyaki Chicken Stir Fry</h3>
-          <p class="text-gray-500 text-xs mb-4">Stir-fried chicken and colorful vegetables tossed in a homemade teriyaki sauce, served with lightly seasoned jasmine rice.</p>
-        </div>
-        <div class="px-6 pb-6 mt-auto">
-          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400">
+          <p class="text-gray-500 text-xs mb-4">Wok de poulet aux légumes et riz basmati.</p>
+          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400 border-t pt-4">
             <span><i class="fas fa-fire-alt mr-1"></i> 450 kcal</span>
-            <span><i class="fas fa-dumbbell mr-1"></i> 32g Protéines</span>
+            <span><i class="fas fa-dumbbell mr-1"></i> 32g Prot</span>
           </div>
         </div>
       </div>
 
-      <!-- Plat 3: Korean Beef Bowls -->
+      <!-- Repas 3 -->
       <div class="menu-card">
         <div class="meal-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=600&q=80" alt="Korean Beef Bowls">
-          <span class="badge-label bg-red-100 text-red-600">Spicy</span>
+          <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=600&q=80" alt="Korean Beef">
+          <span class="badge-label bg-red-100 text-red-600">Gourmet</span>
         </div>
-        <div class="p-6 flex-grow">
+        <div class="p-6">
           <h3 class="font-bold text-lg mb-2">Korean Beef Bowls</h3>
-          <p class="text-gray-500 text-xs mb-4">Sweet and spicy Korean-style ground beef served over rice with a side of fresh veggies for a flavorful meal.</p>
-        </div>
-        <div class="px-6 pb-6 mt-auto">
-          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400">
+          <p class="text-gray-500 text-xs mb-4">Bœuf haché épicé, riz et légumes croquants.</p>
+          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400 border-t pt-4">
             <span><i class="fas fa-fire-alt mr-1"></i> 510 kcal</span>
-            <span><i class="fas fa-dumbbell mr-1"></i> 34g Protéines</span>
+            <span><i class="fas fa-dumbbell mr-1"></i> 34g Prot</span>
           </div>
         </div>
       </div>
 
-      <!-- Plat 4: Beef Tacos -->
+      <!-- Repas 4 -->
       <div class="menu-card">
         <div class="meal-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=600&q=80" alt="Ground Beef Tacos">
-          <span class="badge-label bg-yellow-100 text-yellow-600">Mexican Style</span>
+          <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=600&q=80" alt="Beef Tacos">
+          <span class="badge-label bg-yellow-100 text-yellow-600">Fiesta</span>
         </div>
-        <div class="p-6 flex-grow">
+        <div class="p-6">
           <h3 class="font-bold text-lg mb-2">Beef Tacos & Spanish Rice</h3>
-          <p class="text-gray-500 text-xs mb-4">Seasoned ground beef tucked into crispy taco shells, served with zesty Spanish rice.</p>
-        </div>
-        <div class="px-6 pb-6 mt-auto">
-          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400">
+          <p class="text-gray-500 text-xs mb-4">Tacos au bœuf traditionnels avec riz épicé.</p>
+          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400 border-t pt-4">
             <span><i class="fas fa-fire-alt mr-1"></i> 520 kcal</span>
-            <span><i class="fas fa-dumbbell mr-1"></i> 30g Protéines</span>
+            <span><i class="fas fa-dumbbell mr-1"></i> 30g Prot</span>
           </div>
         </div>
       </div>
 
-      <!-- Plat 5: Beef Lasagna (Crockpot) - Image mise à jour -->
+      <!-- Repas 5 -->
       <div class="menu-card">
         <div class="meal-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=600&q=80" alt="Crockpot Beef Lasagna">
-          <span class="badge-label bg-purple-100 text-purple-600">Comfort Food</span>
+          <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=600&q=80" alt="Lasagna">
+          <span class="badge-label bg-purple-100 text-purple-600">Classic</span>
         </div>
-        <div class="p-6 flex-grow">
+        <div class="p-6">
           <h3 class="font-bold text-lg mb-2">Crockpot Beef Lasagna</h3>
-          <p class="text-gray-500 text-xs mb-4">Des couches de pâtes fondantes, une sauce bolognaise mijotée et du fromage gratiné. Un classique nutritif.</p>
-        </div>
-        <div class="px-6 pb-6 mt-auto">
-          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400">
+          <p class="text-gray-500 text-xs mb-4">Lasagnes au bœuf fondantes et riches en goût.</p>
+          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400 border-t pt-4">
             <span><i class="fas fa-fire-alt mr-1"></i> 590 kcal</span>
-            <span><i class="fas fa-dumbbell mr-1"></i> 38g Protéines</span>
+            <span><i class="fas fa-dumbbell mr-1"></i> 38g Prot</span>
           </div>
         </div>
       </div>
 
-      <!-- Plat 6: Salmon Quinoa Bowls -->
+      <!-- Repas 6 : Salade de Fruits -->
       <div class="menu-card">
         <div class="meal-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=600&q=80" alt="Salmon Quinoa Bowls">
-          <span class="badge-label bg-green-100 text-green-600">High Nutrients</span>
-        </div>
-        <div class="p-6 flex-grow">
-          <h3 class="font-bold text-lg mb-2">Salmon Quinoa Bowls</h3>
-          <p class="text-gray-500 text-xs mb-4">Flaky baked salmon served over a bed of quinoa, with roasted sweet potatoes and kale.</p>
-        </div>
-        <div class="px-6 pb-6 mt-auto">
-          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400">
-            <span><i class="fas fa-fire-alt mr-1"></i> 460 kcal</span>
-            <span><i class="fas fa-dumbbell mr-1"></i> 27g Protéines</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Plat 7: Fruits Frais -->
-      <div class="menu-card lg:col-start-2">
-        <div class="meal-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=600&q=80" alt="Salade de fruits frais">
+          <img src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=600&q=80" alt="Salade fruits">
           <span class="badge-label bg-pink-100 text-pink-600">Dessert</span>
         </div>
-        <div class="p-6 flex-grow">
-          <h3 class="font-bold text-lg mb-2">Boîte Fruits Frais Découpés</h3>
-          <p class="text-gray-500 text-xs mb-4">Mix de fruits de saison fraîchement découpés pour une fin de repas vitaminée.</p>
-        </div>
-        <div class="px-6 pb-6 mt-auto">
-          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400">
-            <span><i class="fas fa-apple-whole mr-1"></i> 160 kcal</span>
+        <div class="p-6">
+          <h3 class="font-bold text-lg mb-2">Boîte Fruits Frais</h3>
+          <p class="text-gray-500 text-xs mb-4">Mélange de fruits de saison fraîchement coupés.</p>
+          <div class="flex items-center gap-4 text-[10px] font-bold text-gray-400 border-t pt-4">
             <span><i class="fas fa-leaf mr-1"></i> Vitamines</span>
+            <span><i class="fas fa-apple-whole mr-1"></i> 100% Frais</span>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- Section Jus Frais -->
-  <section id="jus" class="py-24 bg-blue-600 text-white">
+  <section id="jus" class="py-24 bg-[#4C0A63] text-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div>
-          <span class="inline-block py-1 px-3 rounded-full bg-blue-500 text-white text-[10px] font-bold uppercase mb-4 tracking-wider">Option Boisson</span>
-          <h2 class="text-4xl font-extrabold mb-6">Nos Jus Pressés à Froid <br><span class="text-blue-200">(+15 MAD)</span></h2>
-          <p class="opacity-80 mb-8 leading-relaxed">Le complément parfait pour vos repas. Nos jus sont sans sucre ajouté et préparés à la commande pour une fraîcheur maximale.</p>
-          <div class="grid grid-cols-2 gap-4">
+          <h2 class="text-4xl font-extrabold mb-6 text-[#FDE047]">Nos Jus Pressés (+15 MAD)</h2>
+          <p class="opacity-80 mb-8">Accompagnez vos repas de jus naturels sans sucre ajouté. Fraîcheur garantie.</p>
+          <div class="space-y-4">
             <div class="bg-white/10 p-4 rounded-xl border border-white/20">
-              <h4 class="font-bold">Détox Green</h4>
-              <p class="text-xs opacity-70">Pomme, céleri, gingembre</p>
+              <h4 class="font-bold text-[#FDE047]">Détox Green</h4>
+              <p class="text-xs opacity-70">Pomme, céleri, épinard et gingembre.</p>
             </div>
             <div class="bg-white/10 p-4 rounded-xl border border-white/20">
-              <h4 class="font-bold">Sunrise Boost</h4>
-              <p class="text-xs opacity-70">Orange, carotte, curcuma</p>
+              <h4 class="font-bold text-[#FDE047]">Sunrise Orange</h4>
+              <p class="text-xs opacity-70">Orange, carotte et citron frais.</p>
             </div>
           </div>
         </div>
-        <div class="relative">
-          <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80" alt="Bouteilles de jus frais" class="rounded-[2rem] shadow-2xl">
-        </div>
+        <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80" alt="Jus frais" class="rounded-[2.5rem] shadow-2xl">
       </div>
     </div>
   </section>
@@ -322,102 +324,87 @@
   <!-- Tarifs -->
   <section id="tarifs" class="py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-extrabold mb-12">Nos Formules Hebdomadaires</h2>
+      <h2 class="text-3xl font-extrabold mb-12 text-[#4C0A63]">Nos Packs</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-sm">
+        <!-- Pack Etudiant -->
+        <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm relative overflow-hidden text-left">
+          <div class="absolute top-0 right-0 bg-[#FDE047] text-[#4C0A63] text-[9px] font-black px-4 py-1 rounded-bl-xl uppercase">Offre Étudiant</div>
           <h3 class="text-xl font-bold mb-4">Pack Academy</h3>
-          <p class="text-gray-400 text-xs font-bold uppercase mb-4 tracking-widest">Étudiants & Petits Budgets</p>
-          <div class="text-4xl font-extrabold text-blue-600 mb-6">50 MAD <span class="text-gray-400 text-lg">/ repas</span></div>
-          <p class="text-gray-500 text-sm mb-8">Mangez équilibré sans sacrifier votre budget.</p>
-          <a href="https://wa.me/212776245711" target="_blank" class="block w-full py-4 bg-black text-white rounded-xl font-bold transition hover:bg-gray-800">Commander</a>
+          <div class="text-4xl font-extrabold text-[#4C0A63] mb-4">50 MAD <span class="text-gray-400 text-lg">/ repas</span></div>
+          <div class="bg-purple-50 p-4 rounded-xl mb-6 flex items-center gap-3">
+            <i class="fas fa-id-card text-[#4C0A63]"></i>
+            <p class="text-[11px] text-[#4C0A63] font-bold leading-tight uppercase tracking-tighter">Présenter carte ou attestation étudiant au livreur</p>
+          </div>
+          <a href="https://wa.me/212776245711" target="_blank" class="block w-full py-4 bg-black text-white text-center rounded-xl font-bold transition hover:bg-gray-800">Commander</a>
         </div>
-        <div class="bg-white p-10 rounded-[2rem] border-2 border-blue-600 shadow-xl relative">
-          <span class="absolute top-0 right-10 translate-y-[-50%] bg-blue-600 text-white text-[10px] font-black px-4 py-1 rounded-full">BUSINESS</span>
+        <!-- Pack Business -->
+        <div class="bg-white p-10 rounded-[2.5rem] border-2 border-[#4C0A63] shadow-xl text-left">
           <h3 class="text-xl font-bold mb-4">Pack Business</h3>
-          <p class="text-blue-600 text-xs font-bold uppercase mb-4 tracking-widest">Professionnels Actifs</p>
-          <div class="text-4xl font-extrabold text-blue-600 mb-6">65 MAD <span class="text-gray-400 text-lg">/ repas</span></div>
-          <p class="text-gray-500 text-sm mb-8">Des portions généreuses pour une énergie maximale.</p>
-          <a href="https://wa.me/212776245711" target="_blank" class="block w-full py-4 bg-blue-600 text-white rounded-xl font-bold transition hover:bg-blue-700">Commander</a>
+          <div class="text-4xl font-extrabold text-[#4C0A63] mb-6">65 MAD <span class="text-gray-400 text-lg">/ repas</span></div>
+          <p class="text-gray-500 text-sm mb-8">Idéal pour les actifs et sportifs en quête de performance.</p>
+          <a href="https://wa.me/212776245711" target="_blank" class="block w-full py-4 bg-[#4C0A63] text-white text-center rounded-xl font-bold transition hover:opacity-90">Commander</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Avis Clients -->
+  <!-- Avis -->
   <section id="avis" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-extrabold text-center mb-16">Ils nous font confiance</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100">
-          <div class="flex gap-1 text-yellow-400 mb-4 text-xs">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="text-gray-600 text-sm italic mb-6">"Enfin une solution pour manger sain à la fac sans se ruiner. Les portions sont parfaites et le goût est au rendez-vous."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600 text-xs">Y</div>
-            <span class="font-bold text-xs">Yassine B.</span>
-          </div>
-        </div>
-        <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100">
-          <div class="flex gap-1 text-yellow-400 mb-4 text-xs">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="text-gray-600 text-sm italic mb-6">"Le pack Business me sauve mes midis au bureau. Gain de temps incroyable et repas vraiment variés chaque semaine."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center font-bold text-pink-600 text-xs">S</div>
-            <span class="font-bold text-xs">Sara M.</span>
-          </div>
-        </div>
-        <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100">
-          <div class="flex gap-1 text-yellow-400 mb-4 text-xs">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="text-gray-600 text-sm italic mb-6">"Les jus sont excellents ! C'est devenu ma routine hebdomadaire pour garder la forme malgré le travail."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center font-bold text-green-600 text-xs">M</div>
-            <span class="font-bold text-xs">Mehdi K.</span>
-          </div>
-        </div>
+      <h2 class="text-3xl font-extrabold text-center mb-12 text-[#4C0A63]">Avis Clients</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+        <div class="bg-gray-50 p-6 rounded-2xl italic border border-gray-100 shadow-sm">"Excellent rapport qualité-prix. Les repas sont variés et vraiment bons." - <strong>Yassine B.</strong></div>
+        <div class="bg-gray-50 p-6 rounded-2xl italic border border-gray-100 shadow-sm">"Pratique et sain, ça m'a sauvé ma semaine d'examens." - <strong>Sami R.</strong></div>
+        <div class="bg-gray-50 p-6 rounded-2xl italic border border-gray-100 shadow-sm">"Je recommande le Teriyaki, une vraie tuerie !" - <strong>Laila K.</strong></div>
       </div>
     </div>
   </section>
 
   <!-- Coach IA -->
-  <section id="ia-coach" class="py-24 bg-gray-50">
+  <section id="ia-coach" class="py-24 bg-gray-100">
     <div class="max-w-3xl mx-auto px-6 text-center">
-      <div class="bg-white rounded-[2.5rem] p-8 md:p-12 border border-gray-100 shadow-sm">
-        <h2 class="text-2xl font-extrabold mb-4 text-blue-900">Conseil Nutritionnel IA ✨</h2>
-        <p class="text-gray-500 mb-8 text-sm">Précisez votre objectif pour une recommandation sur mesure.</p>
-        <textarea id="user-goal" placeholder="Ex: Je veux perdre du poids tout en gardant de l'énergie..." class="w-full h-24 p-5 rounded-xl border border-gray-100 mb-4 outline-none focus:border-blue-400 bg-gray-50 shadow-inner"></textarea>
-        <button onclick="askCoach()" id="ia-btn" class="w-full py-4 rounded-xl bg-blue-600 text-white font-bold flex items-center justify-center gap-3 transition hover:bg-blue-700">
-          <span id="btn-text">Demander au Coach</span>
+      <div class="bg-white rounded-[2.5rem] p-8 md:p-12 border border-gray-100 shadow-xl">
+        <h2 class="text-2xl font-extrabold mb-4 text-[#4C0A63]">Conseiller Nutritionnel IA ✨</h2>
+        <p class="text-gray-500 mb-8 text-sm italic">"Donne-moi ton objectif, je te dis quoi manger."</p>
+        <textarea id="user-goal" placeholder="Ex: Je veux prendre du muscle, que manger cette semaine ?" class="w-full h-24 p-5 rounded-xl border border-gray-200 mb-4 outline-none focus:border-[#4C0A63] shadow-inner"></textarea>
+        <button onclick="askCoach()" id="ia-btn" class="w-full py-4 rounded-xl bg-[#4C0A63] text-white font-bold flex items-center justify-center gap-3 transition hover:opacity-90 shadow-lg">
+          <span id="btn-text">Demander Conseil</span>
           <div id="btn-spinner" class="spinner hidden"></div>
         </button>
-        <div id="ai-response" class="hidden mt-6 p-6 rounded-xl bg-blue-50 text-blue-900 text-sm italic text-left border border-blue-100"></div>
+        <div id="ai-response" class="hidden mt-6 p-6 rounded-xl bg-purple-50 text-[#4C0A63] text-sm italic text-left border border-purple-100 leading-relaxed shadow-sm"></div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 bg-white border-t border-gray-50 text-center">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-      <div class="flex items-center gap-3">
-        <div class="logo-container !w-10 !h-10">
-          <img src="logo.png" alt="Prepa'Day Logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/706/706164.png'">
+  <footer class="py-16 bg-white border-t border-gray-50 text-center">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="logo-container mx-auto mb-6 !w-16 !h-16">
+          <img src="logo.png" alt="Logo Footer" onerror="this.src='https://cdn-icons-png.flaticon.com/512/706/706164.png'">
         </div>
-        <span class="font-extrabold text-xs tracking-widest uppercase">Prepa'Day</span>
-      </div>
-      <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">&copy; 2025 Prepa'Day. Mangez mieux, payez moins.</p>
+        <div class="flex justify-center gap-6 mb-8">
+            <a href="https://www.instagram.com/prepaday.ma/" target="_blank" class="text-2xl text-gray-400 hover:text-pink-600 transition">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/212776245711" target="_blank" class="text-2xl text-gray-400 hover:text-green-500 transition">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">&copy; 2025 PREPA'DAY MOROCCO - TOUS DROITS RÉSERVÉS.</p>
     </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
+  <!-- WhatsApp Floating -->
   <a href="https://wa.me/212776245711" target="_blank" class="whatsapp-float">
     <i class="fab fa-whatsapp text-2xl"></i>
   </a>
 
   <script>
-    const apiKey = ""; 
+    /**
+     * CONFIGURATION GITHUB / CLÉ API :
+     * Clé API Gemini intégrée pour Prepa'Day.
+     */
+    const apiKey = "AIzaSyBfP1nCsm5QEqqWsULABHV_2V9H46U3mm4"; 
 
     async function askCoach() {
       const input = document.getElementById('user-goal');
@@ -427,15 +414,41 @@
 
       if (!input.value.trim()) return;
 
+      if (!apiKey || apiKey === "") {
+        responseDiv.innerHTML = "🚨 <strong>Clé API manquante</strong>. <br><br> <a href='https://aistudio.google.com/app/apikey' target='_blank' class='underline font-bold text-purple-700'>Créez une clé ici</a>";
+        responseDiv.classList.remove('hidden');
+        return;
+      }
+
       btnText.classList.add('hidden');
       spinner.classList.remove('hidden');
       responseDiv.classList.add('hidden');
 
-      const systemPrompt = "Tu es le coach IA de Prepa'Day. Recommande 2 plats de notre menu selon l'objectif de l'utilisateur. Sois encourageant et bref. Utilise des emojis.";
-      
+      const systemPrompt = "Tu es le coach IA de Prepa'Day Morocco. Menu dispo: Buffalo Chicken Wraps, Teriyaki Chicken, Korean Beef Bowls, Beef Tacos, Lasagnes, Salade de fruits. Rappelle que le pack Academy (50dh) nécessite une carte étudiant. Sois amical, utilise des emojis et réponds de manière concise en français.";
+
+      // Implémentation du backoff exponentiel pour la gestion d'erreurs
+      const fetchWithRetry = async (url, options, retries = 5, backoff = 1000) => {
+        try {
+          const res = await fetch(url, options);
+          if (res.ok) return res;
+          if (retries > 0) {
+            await new Promise(resolve => setTimeout(resolve, backoff));
+            return fetchWithRetry(url, options, retries - 1, backoff * 2);
+          }
+          throw new Error("Toutes les tentatives ont échoué.");
+        } catch (error) {
+          if (retries > 0) {
+            await new Promise(resolve => setTimeout(resolve, backoff));
+            return fetchWithRetry(url, options, retries - 1, backoff * 2);
+          }
+          throw error;
+        }
+      };
+
       try {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-        const res = await fetch(url, {
+        
+        const res = await fetchWithRetry(url, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -443,12 +456,14 @@
             systemInstruction: { parts: [{ text: systemPrompt }] }
           })
         });
+
         const data = await res.json();
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "Le coach est en cuisine, réessayez bientôt !";
+        const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "Erreur de réponse de l'IA.";
+        
         responseDiv.innerText = text;
         responseDiv.classList.remove('hidden');
       } catch (error) {
-        responseDiv.innerText = "Coach indisponible. Contactez-nous via WhatsApp !";
+        responseDiv.innerText = "Désolé, le coach est temporairement indisponible. Réessaie dans quelques instants !";
         responseDiv.classList.remove('hidden');
       } finally {
         btnText.classList.remove('hidden');
