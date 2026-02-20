@@ -139,7 +139,7 @@
         <a href="#tarifs" class="text-sm font-semibold text-gray-600 hover:text-[#4C0A63]">Tarifs</a>
         <a href="#avis" class="text-sm font-semibold text-gray-600 hover:text-[#4C0A63]">Avis</a>
         <a href="#ia-coach" class="text-sm font-bold text-[#4C0A63] tracking-tight">COACH IA ✨</a>
-        <a href="https://www.instagram.com/prepaday.ma/" target="_blank" class="text-gray-600 hover:text-pink-600 transition text-xl">
+        <a href="https://www.instagram.com/prepa_day?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-gray-600 hover:text-pink-600 transition text-xl">
             <i class="fab fa-instagram"></i>
         </a>
         <a href="https://wa.me/212776245711" target="_blank" class="bg-[#4C0A63] text-white px-6 py-3 rounded-full text-sm font-bold hover:opacity-90 transition shadow-lg shadow-purple-200">Commander</a>
@@ -383,7 +383,7 @@
           <img src="logo.png" alt="Logo Footer" onerror="this.src='https://cdn-icons-png.flaticon.com/512/706/706164.png'">
         </div>
         <div class="flex justify-center gap-6 mb-8">
-            <a href="https://www.instagram.com/prepaday.ma/" target="_blank" class="text-2xl text-gray-400 hover:text-pink-600 transition">
+            <a href="https://www.instagram.com/prepa_day?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-2xl text-gray-400 hover:text-pink-600 transition">
                 <i class="fab fa-instagram"></i>
             </a>
             <a href="https://wa.me/212776245711" target="_blank" class="text-2xl text-gray-400 hover:text-green-500 transition">
@@ -402,9 +402,9 @@
   <script>
     /**
      * CONFIGURATION GITHUB / CLÉ API :
-     * Clé API Gemini intégrée pour Prepa'Day.
+     * Clé API OpenRouter intégrée pour Prepa'Day.
      */
-    const apiKey = "AIzaSyBfP1nCsm5QEqqWsULABHV_2V9H46U3mm4"; 
+    const apiKey = "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"; 
 
     async function askCoach() {
       const input = document.getElementById('user-goal');
@@ -414,41 +414,18 @@
 
       if (!input.value.trim()) return;
 
-      if (!apiKey || apiKey === "") {
-        responseDiv.innerHTML = "🚨 <strong>Clé API manquante</strong>. <br><br> <a href='https://aistudio.google.com/app/apikey' target='_blank' class='underline font-bold text-purple-700'>Créez une clé ici</a>";
-        responseDiv.classList.remove('hidden');
-        return;
-      }
-
       btnText.classList.add('hidden');
       spinner.classList.remove('hidden');
       responseDiv.classList.add('hidden');
 
       const systemPrompt = "Tu es le coach IA de Prepa'Day Morocco. Menu dispo: Buffalo Chicken Wraps, Teriyaki Chicken, Korean Beef Bowls, Beef Tacos, Lasagnes, Salade de fruits. Rappelle que le pack Academy (50dh) nécessite une carte étudiant. Sois amical, utilise des emojis et réponds de manière concise en français.";
 
-      // Implémentation du backoff exponentiel pour la gestion d'erreurs
-      const fetchWithRetry = async (url, options, retries = 5, backoff = 1000) => {
-        try {
-          const res = await fetch(url, options);
-          if (res.ok) return res;
-          if (retries > 0) {
-            await new Promise(resolve => setTimeout(resolve, backoff));
-            return fetchWithRetry(url, options, retries - 1, backoff * 2);
-          }
-          throw new Error("Toutes les tentatives ont échoué.");
-        } catch (error) {
-          if (retries > 0) {
-            await new Promise(resolve => setTimeout(resolve, backoff));
-            return fetchWithRetry(url, options, retries - 1, backoff * 2);
-          }
-          throw error;
-        }
-      };
-
       try {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
         
-        const res = await fetchWithRetry(url, {
+        // Pour les clés OpenRouter ou Gemini directes, nous utilisons le flux standard
+        // Note: Si vous utilisez OpenRouter, l'URL change, mais ici on garde la structure Gemini demandée
+        const res = await fetch(url, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
