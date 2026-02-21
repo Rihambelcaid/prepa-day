@@ -424,69 +424,80 @@
     <i class="fab fa-whatsapp text-2xl"></i>
   </a>
 
-  <script>
-    const apiKey = ""; // La clé est injectée automatiquement par l'environnement
+ <script>
+  const apiKey = "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";
 
-    async function askCoach() {
-      const input = document.getElementById('user-goal');
-      const btnText = document.getElementById('btn-text');
-      const spinner = document.getElementById('btn-spinner');
-      const responseDiv = document.getElementById('ai-response');
+  async function askCoach() {
+    const input = document.getElementById('user-goal');
+    const btnText = document.getElementById('btn-text');
+    const spinner = document.getElementById('btn-spinner');
+    const responseDiv = document.getElementById('ai-response');
 
-      if (!input.value.trim()) return;
+    if (!input.value.trim()) return;
 
-      btnText.classList.add('hidden');
-      spinner.classList.remove('hidden');
-      responseDiv.classList.add('hidden');
+    btnText.classList.add('hidden');
+    spinner.classList.remove('hidden');
+    responseDiv.classList.add('hidden');
 
-      const userQuery = input.value;
-      const systemPrompt = "Tu es le coach expert de Prepa'Day Morocco. Menu: Buffalo Wraps, Teriyaki Chicken, Korean Beef, Beef Tacos, Lasagnes, Fruits. Pack Academy: 50dh (étudiant), Business: 65dh. Jus: +15dh. Réponds avec enthousiasme, utilise des emojis et sois court.";
+    const userQuery = input.value;
 
-      // Fonction d'appel sécurisée avec Exponential Backoff (Retry)
-      const fetchWithRetry = async (url, options, retries = 5, backoff = 1000) => {
-        try {
-          const res = await fetch(url, options);
-          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-          return await res.json();
-        } catch (error) {
-          if (retries > 0) {
-            await new Promise(resolve => setTimeout(resolve, backoff));
-            return fetchWithRetry(url, options, retries - 1, backoff * 2);
-          }
-          throw error;
-        }
-      };
+    const systemPrompt = `
+Tu es le coach expert de Prepa'Day Morocco.
 
-      try {
-        // Utilisation du modèle stable de l'environnement
-        const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=" + apiKey;
-        
-        const data = await fetchWithRetry(url, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: userQuery }] }],
-            systemInstruction: { parts: [{ text: systemPrompt }] }
-          })
-        });
+Menu disponible :
+- Buffalo Chicken Wraps
+- Teriyaki Chicken Stir Fry
+- Korean Beef Bowls
+- Beef Tacos
+- Crockpot Beef Lasagna
+- Boîte Fruits Frais
 
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        
-        if (text) {
-          responseDiv.innerText = text;
-          responseDiv.classList.remove('hidden');
-        } else {
-          throw new Error("No response");
-        }
+Tarifs :
+- Pack Academy : 50 MAD (étudiant)
+- Pack Business : 65 MAD
+- Jus pressés : +15 MAD
 
-      } catch (err) {
-        responseDiv.innerText = "Désolé, je rencontre une petite erreur technique. Contacte-nous sur WhatsApp pour un conseil direct ! 💬";
-        responseDiv.classList.remove('hidden');
-      } finally {
-        btnText.classList.remove('hidden');
-        spinner.classList.add('hidden');
+Donne un conseil personnalisé selon l’objectif (perte de poids, prise de masse, budget étudiant).
+Réponds court, dynamique, enthousiaste avec emojis.
+`;
+
+    try {
+
+      const response = await fetch("https://corsproxy.io/?https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer " + apiKey,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          model: "openai/gpt-4o-mini",
+          messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: userQuery }
+          ]
+        })
+      });
+
+      const data = await response.json();
+
+      const text = data.choices?.[0]?.message?.content;
+
+      if (text) {
+        responseDiv.innerText = text;
+      } else {
+        responseDiv.innerText = "Petite erreur 😅 Réessaie ou contacte-nous sur WhatsApp 💬";
       }
+
+      responseDiv.classList.remove('hidden');
+
+    } catch (err) {
+      responseDiv.innerText = "Erreur technique 😅 Contacte-nous sur WhatsApp 💬";
+      responseDiv.classList.remove('hidden');
+    } finally {
+      btnText.classList.remove('hidden');
+      spinner.classList.add('hidden');
     }
-  </script>
+  }
+</script>
 </body>
 </html>
